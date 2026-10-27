@@ -1,0 +1,277 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px 16px;
+  background-color: #f4e4ba;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 45vh;
+  width: min(400px, 100%);
+  max-width: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: clamp(1.35rem, 5vw, 1.6rem);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+form {
+  margin: 2rem 0 1rem;
+  width: 100%;
+}
+
+form select,
+form button,
+form input {
+  max-width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+form input {
+  width: 100%;
+  border: 1px solid lightgray;
+  font-size: 1rem;
+  min-height: 3rem;
+  padding: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input:focus {
+  border-color: #af4d98;
+  box-shadow: 0 0 5px rgba(175, 77, 152, 0.25);
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.dropdown i {
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  margin-top: 1rem;
+  color: #555;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.dropdown i:hover {
+  color: #af4d98;
+  transform: rotate(180deg);
+}
+
+.select-container img {
+  display: block;
+  width: 2rem;
+  max-width: 35%;
+  height: auto;
+  object-fit: contain;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+  padding: 0.35rem;
+  background-color: #fff;
+}
+
+.select-container select {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #333;
+  border-radius: 0.3rem;
+}
+
+.select-container select:focus-visible {
+  outline: 2px solid #af4d98;
+  outline-offset: 1px;
+}
+
+.msg {
+  margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+form button {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  background-color: #af4d98;
+  color: #fff;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+  background-color: #963f81;
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 2px solid #963f81;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .container {
+    padding: 1.4rem;
+    border-radius: 0.9rem;
+    min-height: auto;
+  }
+
+  form {
+    margin-top: 1.5rem;
+  }
+
+  .dropdown {
+    margin-top: 1.5rem;
+    gap: 0.45rem;
+  }
+
+  .dropdown i {
+    font-size: 1.2rem;
+  }
+
+  .select-container {
+    padding: 0.3rem;
+    gap: 0.2rem;
+  }
+
+  .select-container img {
+    width: 1.7rem;
+  }
+
+  .select-container select {
+    font-size: 0.9rem;
+  }
+
+  .msg {
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 12px 8px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .dropdown {
+    gap: 0.3rem;
+  }
+
+  .dropdown i {
+    font-size: 1rem;
+  }
+
+  .select-container {
+    padding: 0.25rem;
+    gap: 0.15rem;
+  }
+
+  .select-container img {
+    width: 1.4rem;
+  }
+
+  .select-container select {
+    font-size: 0.8rem;
+  }
+
+  form input {
+    font-size: 0.95rem;
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-height: 500px) and (min-width: 481px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    margin: 12px 0;
+    min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
